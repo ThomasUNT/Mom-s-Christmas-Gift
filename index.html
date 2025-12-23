@@ -439,7 +439,7 @@
       let debugOffset = 0;
       const diff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + debugOffset;
 
-      const messageOfTheDay = messages[diff % messages.length];
+      const messageOfTheDay = messages[(diff % messages.length) + 9];
 
       // Background image of the day
       const imageIndex = (diff % 15) + 1;
