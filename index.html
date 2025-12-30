@@ -55,21 +55,23 @@
           location.replace(location.pathname + "?nocache=" + Date.now());
       }
 
+      function localMidnight(date) {
+          return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      }
+
       // Format today's date (example: January 5, 2025)
-      const today = new Date();
+      //const today = new Date();
+      const today = localMidnight(new Date());
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       const formattedDate = today.toLocaleDateString(undefined, options);
 
       document.getElementById("date").textContent = formattedDate;
 
       const messages = [
-          "Bababooey!",
-          "Not Bababooey :(",
-          "Maybe Bababooey??",
           "Merry Christmas! I love you both more than I can portray in a single message... So how about 365 of them?! Everyday when you scan this, there will be a new message to help you start your day. So get ready for a year of cheesy Frodo-ness :) You guys deserve it.",//Dec 25
           "You remembered! The scavenger hunt was amazing; you really had us stumped. Relax today, you earned it!",//Dec 26
           "Good morning! I hope you had a good chance to chill yesterday. I love you both so much",//Dec 27
-          "You guys are the parents everyone else wishes they had",//Dec 28
+          "Today's Useless Trivia: There are 336 dimples on a standard golf ball!",//Dec 28
           "As the year comes to a close, what's something you're looking forward to next year? Text each other your hopes",//Dec 29
           "You guys are the best and I love you! Even if you throw jellyfish at me sometimes...",//Dec 30
           "Year's coming to a close! have you thought about your resolution for next year?",//Dec 31
@@ -80,23 +82,23 @@
           "Alright, we're going to play rock paper scissors. Write down your choice or text it to me and check back tomorrow to see if you win",//Jan 5
           "I hope you remember what you chose yesterday, cause I choose ROCK! Let me know who won :)",//Jan 6
           "Fun fact: the largest cup of coffee ever made was over 6000 gallons and sat in a cup approximately 15 feet tall!",//Jan 7
-          "Remember to take breaks when you need to today",//Jan 8
+          "Today's Useless Trivia: Peanuts are one of the ingredients used to make dynamite!",//Jan 8
           "I hope your coffee is strong, but your problems are weak",//Jan 9
-          "I love you. That's all."//Jan 10
+          "I love you. That's all.",//Jan 10
           "Good morning! This message was brought to you by your favorite child (no arguments will be accepted)",//Jan 11
           "Just reminding you both that you are appreciated more than you realize",//Jan 12
           "You survived raising us, today is nothing compared to that",//Jan 13
           "Good morning! I hope you find something to laugh about today",//Jan 14
-          "You're doing a lot better than you probably give yourself credit for",//Jan 15
+          "Today's Useless Trivia: Bananas and pumpkins are berries but strawberries are not",//Jan 15
           "How do you make adulting look so easy??",//Jan 16
-          "I hope today brings you something nice",//Jan 17
+          "Puzzle Clue #1: 'N' (You should write these down ;) )",//Jan 17
           "Happy Sunday! I hope your nap is amazing later",//Jan 18
           "Not sure why, but I get the feeling that today is hectic. You don't have to fix everything today. Just one step at a time :)",//Jan 19
           "Keep your eyes peeled for something to smile about today",//Jan 20
           "Remember that time you threw a jellyfish at me, Mom? I do too lol. Love you anyways",//Jan 21
           "If today is boring, that's ok. Getting paid for boredom is always good",//Jan 22
           "Drink some water. Yes, this is me nagging",//Jan 23
-          "Whatever today brings, you aren't doing it alone",//Jan 24
+          "Today's Useless Trivia: Snails can sleep for up to 3 years!", //Jan 24
           "Do you show this off to your friends? I hope so lol. It's pretty cool B)",//Jan 25
           "I hope something goes exactly right for you today",//Jan 26
           "Little reminder that even on quiet days, you matter a lot",//Jan 27
@@ -106,56 +108,56 @@
           "You got this! B)",//Jan 31
           "Just popping in to say I love you. Carry on.",//Feb 1
           "Apparently today is Groundhog Day? idk, never seen that movie lol",//Feb 2
-          "Good morning! You're still my favorite humans",//Feb 3
+          "Today's Useless Trivia: There are more trees on earth than there are stars in the Milky Way Galaxy",//Feb 3
           "First one to read this and text the other wins, GO!",//Feb 4
           "You didn't win yesterday? Don't worry, there will be more opportunities",//Feb 5
-          "Just a quick reminder that you both suck at minigolf <3",//Feb 6
+          "Puzzle Clue #2: 'H' (I hope you're writing these down)",//Feb 6
           "PSSST David, Valentine's day is coming up.. Don't forget to get Mom something nice",//Feb 7
           "I believe today is the super bowl? How's Grayson holding up? Is he still at Wingstop?",//Feb 8
-          "Whatever today throws at you, you've handled worse"//Feb 9
+          "Today's Useless Trivia: Until 1994, all globes and maps sold in Albania only had Albania on them!",//Feb 9
           "Fun fact: Despite popular belief, coffee is beloved in the UK. On average 95,000,000 cups are consumed every day in the UK!",//Feb 10
           "Good morning! Time for a quick game of would you rather. Text each other your answer: Would you rather fight a horse sized duck, or 100 duck sized horses?",//Feb 11
           "Hey Mom, remember that time I beat you at bowling? Me too, cause it'll probably never happen again lol",//Feb 12
           "Today's forecast: light coffee showers before clear skies in the afternoon",//Feb 13
           "Happy Valentines Day! You both are loved and appreciated far more than you know",//Feb 14
           "Isaiah 41:10, Fear not, for I am with you; be not dismayed, for I am your God.",//Feb 15
-          "I hope today is mildly interesting at a minumum",//Feb 16
-          "I hope the coffee hits just right this morning. I'm sure it takes a lot of energy to deal with us lol"//Feb 17
+          "I hope today is mildly interesting at a minimum",//Feb 16
+          "Today's Useless Trivia: It takes approximately 142 licks to get to the center of a tootsie pop!",//Feb 17
           "Mom, just a quick reminder that your opinion on Napoleon Dynamite is objectively wrong <3",//Feb 18
           "I'm proud of the life you two have built together. You should be too",//Feb 19
-          "Hah! Made you smile",//Feb 20
+          "Puzzle Clue #3: 'I' (Yes, please write these down)",//Feb 20
           "Just in case we don't say it enough: Mom, your cooking is amazing!",//Feb 21
           "If today feels challenging, just remember that you survived raising us lol",//Feb 22
           "Just a reminder that we learned all our bad habits from you <3",//Feb 23
-          "Quick poll: Who's more stubborn between you two? (no ties allowed lol),//Feb 24
+          "Quick poll: Who's more stubborn between you two? (no ties allowed lol)",//Feb 24
           "No special occassion today. Just wanted to say that I love y'all!",//Feb 25
           "Your love for each other is the best example I could ever ask for",//Feb 26
-          "You got this! Whatever 'this' may be today",//Feb 27
+          "Today's Useless Trivia: Wombat poop is cube shaped!",//Feb 27
           "Alright, here's your chance at redemption from our rock paper scissors game. Lock in your answer again and check back tomorrow",//Feb 28
           "PAPER! Don't feel bad, we can't all be winners... unless you won.. then uh... congratulations",//Mar 1
           "Apparently today is Texas Independence day. Who knew?",//Mar 2
           "I bet one of you is thinking about lunch already... is it you, David?",//Mar 3
-          "Just a little reminder that David's dance moves are banned in 47 states <3",//Mar 4
+          "Puzzle Clue #4: 'D' (Write down)",//Mar 4
           "Challenge for today: Text each other how your day is going using only emojis",//Mar 5
           "Today is apparently employee appreciation day! Since you both are employees, just reminding you that you are appreciated",//Mar 6
-          "What's one thing that made you smile this week? Always good to appreciate what we have",//Mar 7
+          "Today's Useless Trivia: Non-dairy Coffee Creamer is flammable!",//Mar 7
           "Don't forget to wish your favorite son a happy birthday!... Or was it tomorrow?",//Mar 8
           "Hopefully daylight savings isn't messing you up too bad lol",//Mar 9
           "Guess which one of you will forget why you walked into a room today",//Mar 10
           "Here's a little challenge for both of you. Whoever can text me the best dad joke wins. Good luck!",//Mar 11
           "Statistically speaking, one of you will be wrong about something today... I wonder who",//Mar 12
-          "If nothing else, at least there's coffee :)",//Mar 13
+          "Today's Useless Trivia: The Eiffel Tower grows up to 6 inches on hot days",//Mar 13
           "John 14:27, Peace I leave with you; my peace I give you.",//Mar 14
-          "Happy Sunday! Whatever today brings, I hope you both take a moment to just breathe."//Mar 15
+          "Happy Sunday! Whatever today brings, I hope you both take a moment to just breathe.",//Mar 15
           "If today were a food, it would be leftovers :/",//Mar 16
           "A little motivational quote: 'eh, it'll probably be fine",//Mar 17
           "Sometimes being right isn't worth the argument",//Mar 18
           "Alright, I'm thinking of a word. See if you can guess. Come back tomorrow to find out",//Mar 19
           "The word was COFFEE... Yeah, you probably should have seen that coming",//Mar 20
-          "If you're tired, that's future you's problem. Take a break",//Mar 21
+          "Puzzle Clue #5: 'B' (Write down)",//Mar 21
           "David, just a quick reminder: We all know about your secret candy stash lol",//Mar 22
           "Another little challenge today: compliment each other without using 'love' or 'pretty/gorgeous'",//Mar 23
-          "Bet you didn't think this would last all year, huh? Thought it would've looped by now?",//Mar 24
+          "Today's Useless Trivia: Octopuses have 3 hearts!",//Mar 24
           "Hey David, remember how I made you a Scottish Lord? I know, I really am the best lol",//Mar 25
           "Isaiah 40:31, Those who hope in the Lord will renew their strength.",//Mar 26
           "Good morning! Nothing special today. Just hope it's a good one!",//Mar 27
@@ -166,14 +168,14 @@
           "What's something goofy you both liked about each other while you were dating? Text each other",//Apr 1
           "Challenge for today: First one to text a meme to the family group chat wins, GO!",//Apr 2
           "Happy Good Friday! Good day to remember Jesus' perfect sacrifice",//Apr 3
-          "Hope you both slept well. That's half the battle lol",//Apr 4
+          "Today's Useless Trivia: A group of flamingos is called a flamboyance!",//Apr 4
           "Happy easter! Try not to eat too much candy today lol",//Apr 5
-          "Sending good vibes your way today. You deserve it!",//Apr 6
+          "Puzzle Clue #6: 'E' (Write down)",//Apr 6
           "I hope today feels calm and peaceful for you",//Apr 7
           "First one to text me after reading this wins, GO!",//Apr 8
           "If you lost the race yesterday, it's because I was raised by slow readers <3",//Apr 9
           "Did you know that the first consumption of coffee dates back to around 800 A.D.? Crazy!",//Apr 10
-          "Good morning! Have fun with another day of being effortlessly awesome B)",//Apr 11
+          "Today's Useless Trivia: A group of porcupines is called a prickle!",//Apr 11
           "Joshua 1:9, Be strong and courageous… for the Lord your God is with you wherever you go.",//Apr 12
           "You deserve a snack today. Just don't go too crazy",//Apr 13
           "Today's challenge: Text each other something you are proud of from this week",//Apr 14
@@ -181,181 +183,181 @@
           "Here's another challenge for you today: Mom try and describe a movie using only emojis and David has to try and guess what the movie is",//Apr 16
           "Settle this debate: Pancakes or waffles?",//Apr 17
           "I bet one of you will forget why you opened the fridge today lol",//Apr 18
-          "If today had a theme song, it would be elevator music",//Apr 19
-          //Apr 20
+          "Today's Useless Trivia: A shrimp's heart is in its head!",//Apr 19
+          "Puzzle Clue #7: 'Y' (Write down)",//Apr 20
           "I dare you to try and prank each other today >:)",//Apr 21
-          //Apr 22
+          "Don't forget to drink water today. Looking at you, Mom",//Apr 22
           "2 Corinthians 12:9, My grace is sufficient for you, for my power is made perfect in weakness.",//Apr 23
-          //Apr 24
-          //Apr 25
+          "Someone will probably be annoying today. Try not to strangle them lol",//Apr 24
+          "Yes, there is still a message today. This counts, right?",//Apr 25
           "Hmm... we should get barbeque some time lol",//Apr 26
           "First one to make the other laugh today is the winner. Good luck!",//Apr 27
-          "May your meetings be short and your snacks plentiful",//Apr 28
-          //Apr 29
-          //Apr 30
+          "Today's Useless Trivia: The longest recorded flight of a chicken was 13 seconds!",//Apr 28
+          "I'm curious, do you read these before or after you've poured your coffee?",//Apr 29
+          "Today is truly one of the days of all time",//Apr 30
           "PSSST David, Mother's day is coming up. Don't forget to get something nice for Mom",//May 1
-          //May 2
-          "Sometimes the bravest thing you can do is take a nap lol",//May 3
-          //May 4
+          "Alright, be honest... how many cups of coffe have you had already?",//May 2
+          "Puzzle Clue #8: 'M' (Write Down)",//May 3
+          "May the 4th be with you!",//May 4
           "Happy Cinco de Mayo! Maybe eat some salsa or something lol",//May 5
-          //May 6
-          //May 7
-          //May 8
+          "At least today isn't Monday.... oh... nevermind",//May 6
+          "Today's Useless Trivia: Scotland has 421 words for snow!",//May 7
+          "You're doing a lot better than you probably give yourself credit for",//May 8
           "Today is brought to you by caffeine and good vibes",//May 9
-          //May 10
+          "Good morning! You're still my favorite humans",//May 10
           "Psalm 73:26, My flesh and my heart may fail, but God is the strength of my heart.",//May 11
-          //May 12
-          //May 13
-          //May 14
+          "You got this! Whatever 'this' may be today",//May 12
+          "This message is just a filler. Since we're being honest lol",//May 13
+          "Bet you didn't think this would last all year, huh? Thought it would've looped by now?",//May 14
           "Hey Mom, remember when I got you that shirt with all your best roasts on it? I know, I really am the best lol",//May 15
-          //May 16
-          //May 17
-          "Always remember: If you avoid a problem long enough, it usuall goes away lol",//May 18
-          //May 19
-          //May 20
+          "Today's Useless Trivia: The burps from 10 cows could heat and fuel your home for a year!",//May 16
+          "Hope you both slept well. That's half the battle lol",//May 17
+          "Always remember: If you avoid a problem long enough, it usually goes away lol",//May 18
+          "Mom will be right about something today. In other news, water is wet",//May 19
+          "Puzzle Clue #9: 'S' (Write down)",//May 20
           "Little reminder: Mom, your opinion on temperature is wrong and invalid <3",//May 21
-          //May 22
-          //May 23
+          "I hope today brings you something nice",//May 22
+          "Today's Useless Trivia: Sloths can hold their breath longer than dolphins!",//May 23
           "1 Corinthians 16:14, Let all that you do be done in love.",//May 24
           "Happy Memorial Day. Hopefully you got the day off today",//May 25
-          //May 26
+          "Just a quick reminder that you both suck at minigolf <3",//May 26
           "Here's a motto for you to live by today: Eh, good enough",//May 27
-          //May 28
-          //May 29
-          //May 30
-          "Tell a joke to each other today! The cheesier the better",//May 31
+          "Hah! Made you smile",//May 28
+          "Just a little reminder that David's dance moves are banned in 47 states <3",//May 29
+          "If you're tired, that's future you's problem. Take a break",//May 30
+          "Today's Useless Trivia: The boeing 747's wingspan is longer than the Wright Brother's first flight!",//May 31
           "Happy July 1st! Share a bucket list activity you would like to do this summer",//Jun 1
-          //Jun 2
-          //Jun 3
-          //Jun 4
+          "Sending good vibes your way today. You deserve it!",//Jun 2
+          "I hope your coffee does its job today lol",//Jun 3
+          "Sometimes the bravest thing you can do is take a nap lol",//Jun 4
           "Colossians 3:14, Above all these put on love, which binds everything together.",//Jun 5
-          //Jun 6
+          "Puzzle Clue #10: 'O' (Write down)",//Jun 6
           "Trust your gut... unless you're hungry. Then you should probably eat first.",//Jun 7
-          //Jun 8
+          "Today's Useless Trivia: You can smell rain before it starts!",//Jun 8
           "Did you know that Coffee is technically a fruit? The coffee 'bean' grows in the center of a berry called the coffee cherry",//Jun 9
-          //Jun 10
+          "Ok good, the site is still up. Just making sure lol",//Jun 10
           "This message was brought to you by your good friend: Coffee :)",//Jun 11
-          //Jun 12
-          //Jun 13
-          //Jun 14
+          "I dare you to talk to someone with an accent today lol",//Jun 12
+          "If nothing else, at least there's coffee :)",//Jun 13
+          "Good morning! Have fun with another day of being effortlessly awesome B)",//Jun 14
           "PSSST Mom, father's day is coming up. Maybe get something nice for David",//Jun 15
-          //Jun 16
-          //Jun 17
-          //Jun 18
+          "Today's Useless Trivia: Women blink about twice as often as men!",//Jun 16
+          "If today had a theme song, it would be elevator music",//Jun 17
+          "Tell a joke to each other today! The cheesier the better",//Jun 18
           "Psalm 107:1, Give thanks to the Lord, for He is good; His love endures forever.",//Jun 19
-          //Jun 20
+          "Puzzle Clue #11: 'S' (Write down)",//Jun 20
           "Happy Birthday Mom! We all love you so much and appreciate all that you do for us!",//Jun 21
-          //Jun 22
-          //Jun 23
-          //Jun 24
+          "May your meetings be short and your snacks plentiful",//Jun 22
+          "What's one thing that made you smile recently?",//Jun 23
+          "Whatever today throws at you, you've handled worse",//Jun 24
           "Another little challenge for you today: Share a weird food combination that you secretly love today",//Jun 25
-          //Jun 26
-          //Jun 27
-          //Jun 28
+          "Today's Useless Trivia: Cleopatra was born closer to the moon landing than the building of the pyramids!",//Jun 26
+          "I hope the coffee hits just right this morning. I'm sure it takes a lot of energy to deal with us lol",//Jun 27
+          "Whatever today brings, you aren't doing it alone",//Jun 28
           "Lamentations 3:22-23, His mercies never come to an end; they are new every morning.",//Jun 29
-          //Jun 30
+          "Remember to take breaks when you need to today",//Jun 30
           "Fake it till you make it! That usually works for me lol",//Jul 1
-          //Jul 2
-          //Jul 3
-          //Jul 4
-          //Jul 5
+          "You guys are the parents everyone else wishes they had",//Jul 2
+          "What's one thing that made you smile this week? Always good to appreciate what we have",//Jul 3
+          "Today's Useless Trivia: Otters hold hands while they sleep to keep from drifting apart",//Jul 4
+          "Puzzle Clue #12: 'C' (Write down)",//Jul 5
           "You should share your current favorite song with each other today",//Jul 6
-          //Jul 7
+          "Would you rather be able to see 10 minutes or 150 years into the future? Text each other your reason",//Jul 7
           "Did you know that Beethoven LOVED coffee? He famously counted out precisely 60 coffee beans for each cup he made",//Jul 8
-          //Jul 9
+          "Text each other a song lyric and see if the other can guess the song",//Jul 9
           "Psalm 118:24, This is the day that the Lord has made; let us rejoice and be glad in it.",//Jul 10
-          //Jul 11
+          "Memory Test! Do you remember the first thing you ever bought online?",//Jul 11
           "Just a reminder that I inherited my sarcasm honestly. So thanks for that <3",//Jul 12
-          //Jul 13
-          //Jul 14
-          //Jul 15
-          //Jul 16
+          "You make the little things look effortless",//Jul 13
+          "Another reminder that I love both of you :)",//Jul 14
+          "Today's Useless Trivia: The first computer bug was an actual bug!",//Jul 15
+          "Even small progress is still progress",//Jul 16
           "Another little challenge today: Share a silly childhood story with the each other",//Jul 17
-          //Jul 18
-          //Jul 19
-          "Proverbs 16:3",//Jul 20
-          //Jul 21
-          //Jul 22
+          "Someone somewhere just spilled some coffee... hopefully not you lol",//Jul 18
+          "Would you rather be in jail for 5 years or in a coma for 10? Text each other your reason",//Jul 19
+          "Proverbs 16:3 Commit to the Lord whatever you do, and he will establish your plans.",//Jul 20
+          "Puzzle Clue #13: 'A' (Write down)",//Jul 21
+          "Some days are just quiet, and that's okay",//Jul 22
           "Hey David, remember that time I got the Halo announcer to wish you a Merry Christmas? I know, I really am the best lol",//Jul 23
-          //Jul 24
-          //Jul 25
+          "I think if aliens were real, they would watch us like reality TV lol",//Jul 24
+          "You are appreciated more than words can capture",//Jul 25
           "I hope you confuse someone by using outdated slang today lol",//Jul 26
-          //Jul 27
-          //Jul 28
-          "Did you know that Brazil is the #1 producer of coffee in the world? Some estimates say up to 40% of the world's coffe is from Brazil!",//Jul 29
-          //Jul 30
+          "Hopefully the rest of your day is as nice as this cup of coffee",//Jul 27
+          "Today's Useless Trivia: There are more possible games of chess than atoms in the observable universe!",//Jul 28
+          "Did you know that Brazil is the #1 producer of coffee in the world? Some estimates say up to 40% of the world's coffee is from Brazil!",//Jul 29
+          "Wishing you a calm and easy morning!",//Jul 30
           "Romans 8:28, In all things God works for the good of those who love Him.",//Jul 31
-          //Aug 1
+          "Would you rather run 100mph or fly 20mph? Text each other your reason",//Aug 1
           "I'm writing this in December, but I bet it's scorching outside by the time you're reading this",//Aug 2
-          //Aug 3
-          //Aug 4
-          //Aug 5
-          //Aug 6
+          "Sending a little positive energy your way this morning!",//Aug 3
+          "Just reading this counts as a little connection from me to you",//Aug 4
+          "Puzzle Clue #14: 'T' (Write down)",//Aug 5
+          "Today's Useless Trivia: Most American car horns honk in the key of F",//Aug 6
           "Today feels like a 'complain-about-the-weather' day",//Aug 7
-          //Aug 8
-          //Aug 9
-          //Aug 10
+          "I hope something good happens today, even if it's small",//Aug 8
+          "Notice one small thing today that normally goes unnoticed",//Aug 9
+          "Wishing you a little pause in the busyness", //Aug 10
           "Another little challenge for you today: Get the other a little sweet treat",//Aug 11
-          //Aug 12
-          //Aug 13
-          //Aug 14
+          "Sometimes the simplest days are the best ones",//Aug 12
+          "Here's a little love to make your morning easier",//Aug 13
+          "Today's Useless Trivia: Clouds can weigh over 1 Million Tons!",//Aug 14
           "Psalm 55:22, Cast your burden on the Lord, and He will sustain you.",//Aug 15
           "Yes, naps count as being productive lol",//Aug 16
-          "Yet another monday... Maybe find something fun to do together this weekend",//Aug 17
-          //Aug 18
-          "Fun Fact: Before becoming a drink, coffee was originally a food! The beans were crushed and mixed with animal fat to make something close to an energy bar!",//Aug 19
-          //Aug 20
+          "Yet another Monday... Maybe find something fun to do together this weekend",//Aug 17
+          "Would you rather talk like Yoda or breath like Darth Vader? Text each other your answer",//Aug 18
+          "Fun Fact: Before becoming a drink, coffee was originally a chewed, not brewed.",//Aug 19
+          "Puzzle Clue #15: 'A' (Write down)",//Aug 20
           "Happy Friday! Share one thing you love about the other today",//Aug 21
-          //Aug 22
-          //Aug 23
+          "Today's Useless Trivia: Hawaiian pizza was invented in Canada",//Aug 22
+          "A little reminder that you're loved and appreciated today and every day",//Aug 23
           "Today's challenge: Don't forget where you put your phone",//Aug 24
-          //Aug 25
-          //Aug 26
+          "Good morning! No tasks. No challenges. Just have a good day :)",//Aug 25
+          "I hope today feels steady and easy",//Aug 26
           "Hebrews 13:8, Jesus Christ is the same yesterday and today and forever.",//Aug 27
-          //Aug 28
-          //Aug 29
+          "You're doing great, even when it may not feel like it",//Aug 28
+          "Today's Useless Trivia: The moon has moon-quakes!",//Aug 29
           "So have you missed a day yet? Guess you'll have to wait for it to come back around next year lol",//Aug 30
-          //Aug 31
+          "If you're reading this, the site is still working. Thank goodness!",//Aug 31
           "Happy September 1st! Share your favorite part of the fall season with each other",//Sep 1
           "Good morning! Don't forget to stretch... your joints will thank you lol",//Sep 2
-          //Sep 3
-          //Sep 4
-          //Sep 5
-          //Sep 6
+          "Puzzle Clue #16: 'S' (Write down)",//Sep 3
+          "Would you rather be able to read minds or predict the future? Text each other your answers!",//Sep 4
+          "Even ordinary days are worth noticing",//Sep 5
+          "Today's Useless Trivia: Barbie's full name is Barbara Millicent Roberts",//Sep 6
           "Happy Labor Day! Hopefully you got the day off lol",//Sep 7
-          //Sep 8
-          //Sep 9
-          //Sep 10
-          //Sep 11
+          "You deserve a calm and easy moment right now. Enjoy your coffee!",//Sep 8
+          "I still love you! Just in case you forgot lol",//Sep 9
+          "Good morning! I hope your day is as smooth as this coffee",//Sep 10
+          "Another day another message. Hopefully both are good lol",//Sep 11
           "Don't forget to wish your second favorite son a happy birthday! Maybe just don't tell him I said that ;)",//Sep 12
-          //Sep 13
-          //Sep 14
-          //Sep 15
-          //Sep 16
+          "Puzzle Clue #17: 'I' (Write down)",//Sep 13
+          "Today's Useless Trivia: On Venus a day is longer than a year!",//Sep 14
+          "Hope your coffee tastes especially good this morning :)",//Sep 15
+          "I hope today feels productive in a satisfying way",//Sep 16
           "Oh good, you are still reading these! Glad you're still checking in",//Sep 17
           "Nothing special today, just another reminder that I still love you",//Sep 18
-          //Sep 19
-          //Sep 20
-          //Sep 21
+          "Would you rather find $100 floating in a public toilet or $20 in your pocket? Text each other your answer",//Sep 19
+          "Wishing you a solid, uneventful day",//Sep 20
+          "Today's Useless Trivia: A giraffe can go longer without water than a camel!",//Sep 21
           "Just checking in, have you eaten anything green lately? You should probably do that lol",//Sep 22
           "And P.S. from yesterday's message... Green JollyRanchers don't count <3",//Sep 23
-          //Sep 24
+          "Puzzle Clue #18: 'E' (Write down)",//Sep 24
           "Fun fact: Decaf coffee doesn't mean NO caffeine. It just has approximately 15% as much caffeine",//Sep 25
-          //Sep 26
-          //Sep 27
-          //Sep 28
-          //Sep 29
-          //Sep 30
+          "Hopefully today has more good moments than annoying ones lol",//Sep 26
+          "Just a reminder that I'm thinking about you today <3",//Sep 27
+          "Good morning! Excited to find out what today brings?",//Sep 28
+          "Today's Useless Trivia: The inventor of Pringles is buried in a Pringles can!",//Sep 29
+          "Nothing fancy today. Just a little love from me to you :)",//Sep 30
           "Happy October 1st! Share your silliest halloween costume you ever wore with each other",//Oct 1
-          //Oct 2
-          //Oct 3
+          "Good morning! Hopefully everything goes according to your plans",//Oct 2
+          "Would you rather have a permanent unibrow or no eyebrows at all? Text each other your answer",//Oct 3
           "Remember: Naps fix like 80% of problems",//Oct 4
-          //Oct 5
-          //Oct 6
-          //Oct 7
-          //Oct 8
+          "Puzzle Clue #19: 'A' (Write down)",//Oct 5
+          "Good morning! I hope the day treats you fairly",//Oct 6
+          "Just checking in with a little hello this morning :)",//Oct 7
+          "I hope today feels familiar and comfortable",//Oct 8
           "Fun fact: The caffeine removed to produce decaf coffee is sold to soda and pharmaceutical companies!",//Oct 9
-          //Oct 10
+          "Today's Useless Trivia: Oxford University is older than the Aztec Empire!",//Oct 10
           "Welcome to Trivia Week! Each day will have a new question. Tell each other whether or not you know the answer. Most correct answers at the end of the week wins. Good luck!",//Oct 11
           "Couple's Trivia Week Day 1: What/Where was your first date? Text each other if you remember",//Oct 12
           "Couple's Trivia Week Day 2: Who said 'I love you' first? Text each other if you remember", //Oct 13
@@ -365,81 +367,84 @@
           "Couple's Trivia Week Day 6: What is the other's favorite song? Text each other if you remember",//Oct 17
           "This concludes Trivia Week! Tally up your points and declare a winner!",//Oct 18
           "You're both still winning at life, in case you forgot",//Oct 19
-          //Oct 20
-          //Oct 21
+          "Puzzle Clue #20: 'M' (Write down)",//Oct 20
+          "Would you rather always have wet socks or always have a rock in your shoe? Text each other your answers",//Oct 21
           "I wonder, have you found any typos in any of these yet?",//Oct 22
           "P.S. from yesterday's message... if you have, you don't have to make fun of me for it",//Oct 23
-          //Oct 24
-          //Oct 25
-          //Oct 26
-          //Oct 27
+          "Good morning! Sending a little positivity your way",//Oct 24
+          "Hopefully today doesn't ask too much of you",//Oct 25
+          "Today's Useless Trivia: You can hear a whale's heartbeat from over 2 miles away!",//Oct 26
+          "Good morning! I hope everything just clicks into place today",//Oct 27
           "Another little task today. Text each other your answer: If you could teleport anywhere in the world right now, where would you go?",//Oct 28
-          //Oct 29
-          //Oct 30
+          "Today's gonna be a great day! I bet you even plug in the USB the right way on the first try lol",//Oct 29
+          "Puzzle Clue #21: 'O' (Write down)",//Oct 30
           "Fun fact: The first instant coffee dates back to 1929 and was produced by NESCAFE to help with Brazil's surplus of coffee",//Oct 31
-          //Nov 1
+          "Wishing you a steady and predictable day today!",//Nov 1
           "Alright, I'm thinking of a number between 1 and 10. Text each other your answers and whoever is closest tomorrow wins",//Nov 2
           "The results are in! Whoever was closer to 10, you're my favorite <3",//Nov 3
-          //Nov 4
-          //Nov 5
-          //Nov 6
+          "Nothing special today. Just wanted to say I love you",//Nov 4
+          "Today's Useless Trivia: A 'Jiffy' is a unit of time that represents 1/100th of a second!",//Nov 5
+          "Would you rather only listen to Christmas music or only watch horror movies? Text each other your answers",//Nov 6
           "This is still better than a calendar, right?",//Nov 7
-          //Nov 8
-          //Nov 9
-          //Nov 10
+          "Wishing you a straightforward day today :)",//Nov 8
+          "Puzzle Clue #22: 'P' (Write down)",//Nov 9
+          "Just a little encouragement to help get your day started <3",//Nov 10
           "Happy Veterans Day! Hopefully you got the day off lol",//Nov 11
-          //Nov 12
-          //Nov 13
-          //Nov 14
+          "Hopefully today is cooperative for you",//Nov 12
+          "Another day, another message from your favorite son... this counts, right?",//Nov 13
+          "Today's Useless Trivia: There are more lego people than actual people on earth!",//Nov 14
           "How long do you think it took me to write all of these?",//Nov 15
           "The answer is too long... totally worth it tho",//Nov 16
-          //Nov 17
-          //Nov 18
-          //Nov 19
-          //Nov 20
+          "Puzzle Clue #23: 'I' (Write down)",//Nov 17
+          "I hope today wraps up on a good note",//Nov 18
+          "Wishing you a day with fewer annoyances than usual lol",//Nov 19
+          "Would you rather be a genius everyone thinks is an idiot or an idiot everyone thinks is a genius? Text each other your answers",//Nov 20
           "Almost Thanksgiving, time to be grateful! Text each other one thing you appreciate",//Nov 21
-          //Nov 22
-          //Nov 23
+          "Today's Useless Trivia: The voice actor of Bugs Bunny was allergic to carrots!",//Nov 22
+          "Puzzle Clue #24: 'L' (Write down)",//Nov 23
           "Fun fact: in 1746 Coffee was banned in Sweden because it was believed to stimulate radical thinking",//Nov 24
           "Are these messages still fun? I hope they still make you smile sometimes",//Nov 25
           "Happy Thanksgiving! Remember to save room for pumpkin pie this time. I'm looking at you, David",//Nov 26
           "How was Thanksgiving? I bet you're STILL full, huh? That just means you did it right",//Nov 27
           "Making us put up Christmas lights already? How cruel lol",//Nov 28
-          //Nov 29
-          //Nov 30
-          //Dec 1
-          //Dec 2
-          //Dec 3
-          //Dec 4
+          "Today's Useless Trivia: The moon smells like burnt gunpowder!",//Nov 29
+          "I hope today is uneventful in the best way",//Nov 30
+          "Puzzle Clue #25: 'O' (Write down)",//Dec 1
+          "I hope your day moves at a good pace",//Dec 2
+          "Another small note for another day. You got this!",//Dec 3
+          "Would you rather speak every language or be able to talk to animals? Text each other your answer",//Dec 4
           "One more quick reminder that both of you still suck at mini-golf <3",//Dec 5
           "Yes, it's so true that I had to say it twice. Don't email me lol",//Dec 6
-          //Dec 7
-          //Dec 8
-          //Dec 9
+          "Today's Useless Trivia: One quarter of the bones in your body are in your feet!",//Dec 7
+          "Good morning! Hopefully your day has at least one win in it",//Dec 8
+          "Just a reminder that you aren't doing this alone :)",//Dec 9
           "Fun fact: The most expensive coffee in the world costs ~$600/lb and is first digested and expelled by a type of wildcat native to Indonesia",//Dec 10
           "Have you started preparing the scavenger hunt this year yet, Mom? Might be time to get started ;)",//Dec 11
-          //Dec 12
-          //Dec 13
+          "Puzzle Clue #26: 'D' (Write down)",//Dec 12
+          "Wishing you a day that gives you something to smile about later",//Dec 13
           "Got any presents already under the tree? I know Grayson hates that lol",//Dec 14
-          //Dec 15
+          "Today's Useless Trivia: Sharks existed before trees!",//Dec 15
           "It's a perfect day for cold weather and hot chocolate",//Dec 16
-          //Dec 17
-          //Dec 18
-          //Dec 19
-          //Dec 20
-          "You off for Christmas break yet, Mom? You deserve to relax",//Dec 21
+          "Would you rather give up coffee forever or give up candy forever? Text each other your answers",//Dec 17
+          "Good morning! Sending support your way today :)",//Dec 18
+          "Another day, another chance for something mildly interesting to happen lol",//Dec 19
+          "You off for Christmas break yet, Mom? You deserve to relax",//Dec 20
+          "The Final Useless Trivia: Sloths can take up to a month to digest a meal!",//Dec 21
           "How are the rehearsals for the church Christmas Eve service going? I hope the songs are nice",//Dec 22
-          //Dec 23
-          "Kinda crazy: This is the last message before it loops back to the one I wrote for Christmas last year. I hope you've enjoyed, and these messages will always be here when you need to smile <3",//Dec 24
+          "Kinda crazy: tomorrow's is the last message before it loops back to the one I wrote for Christmas last year. I hope you've enjoyed, and these messages will always be here when you need to smile <3",//Dec 23
+          "FINAL PUZZLE CLUE: Word 1 = First 6 letters. Word 2 = Next 2 Letters. Word 3 = Next 10 letters. Word 4 = Next 7 letters",//Dec 24
       ];
 
       // Choose a date to start counting
-      const startDate = new Date("2025-01-01");
+      //const startDate = new Date("2025-01-01");
+      const startDate = localMidnight(new Date(2025, 0, 1)); // Jan = 0
 
       let debugOffset = 0;
-      const diff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + debugOffset;
 
-      const messageOfTheDay = messages[diff % messages.length];
+      //const diff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + debugOffset;
+      const diff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+
+      const messageOfTheDay = messages[(diff + 7) % messages.length];
 
       // Background image of the day
       const imageIndex = (diff % 15) + 1;
